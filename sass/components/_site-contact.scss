@@ -1,0 +1,33 @@
+.site-contact {
+    /* outline: 1px solid green; */
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.site-contact__link {
+    /* outline: 1px solid red; */
+    display: flex;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    color: currentColor;
+    transition:
+        transform 250ms var(--anitimfnc),
+        color 250ms var(--anitimfnc);
+    &:hover,
+    &:focus {
+        color: var(--brandblue);
+        transform: scale(1.05);
+    }
+}
+
+.site-contact__icon {
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+.site-contact__item:not(:first-child) {
+    margin-left: 50px;
+}
+

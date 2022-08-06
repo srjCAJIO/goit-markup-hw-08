@@ -1,0 +1,37 @@
+.btn {
+    /* outline: 1px solid red; */
+    /* display: block; */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: var(--mainspacer);
+    padding: 10px 0;
+    width: 200px;
+
+    font-family: inherit;
+    color: var(--white-color);
+    @include font(700, 16px, 30px, 0.06em);
+    // font-weight: 700;
+    // font-size: 16px;
+    // line-height: 1.88;
+    // letter-spacing: 0.06em;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    background-color: var(--brandblue);
+    transition:
+        background-color 250ms var(--anitimfnc),
+        box-shadow 250ms var(--anitimfnc);
+    &:hover,
+    &:focus {
+            background-color: var(--hoverblue);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15),
+                0px 4px 4px rgba(0, 0, 0, 0.15);
+        }
+}
+
+.btn__icon {
+    margin-left: 10px;
+}
+

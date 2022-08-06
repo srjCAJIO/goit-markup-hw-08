@@ -1,0 +1,19 @@
+.page-header {
+    @include font($fw:500, $ls:0.02em);
+    // font-weight: 500;
+    // letter-spacing: 0.02em;
+    border-bottom: 1px solid var(--bdrcolor);
+    background-color: var(--white-color);
+    
+    .container {
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+.page-header__nav {
+    /* outline: 1px solid red; */
+    display: flex;
+    align-items: center;
+}

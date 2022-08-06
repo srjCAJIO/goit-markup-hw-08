@@ -1,0 +1,42 @@
+.license {
+    margin: 20px auto 0;
+    @include font($lh: 24px);
+    // font-size: 14px;
+    // line-height: calc(24/14);
+    // letter-spacing: 0.03em;
+}
+
+.license__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.license__wrap {
+    display: flex;
+    width: 16px;
+    height: 15px;
+    margin-right: 7px;
+    border: 2px solid var(--brandblack);
+    border-radius: 2px;
+    transition: background-color 250ms var(--anitimfnc);
+}
+
+.license__input:checked + .license__label .license__wrap {
+    background-color: var(--brandblue);
+    border: none;
+}
+
+.license__input:focus + .license__label .license__wrap {
+    border-color: var(--brandblue);
+}
+
+.license__link {
+    text-decoration: underline;
+    margin-left: 0.5em;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}

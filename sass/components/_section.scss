@@ -1,0 +1,21 @@
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+.section__title {
+    margin-bottom: 50px;
+
+    @include font(700, 36px, 42px);
+    // font-weight: 700;
+    // font-size: 36px;
+    // line-height: 1.17;
+    text-align: center;
+    color: var(--txtblack);
+}
+
+.section__subtitle {
+    text-transform: uppercase;
+    color: currentColor;
+    font-size: 14px;
+}

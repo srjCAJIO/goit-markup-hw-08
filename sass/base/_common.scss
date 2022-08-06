@@ -1,0 +1,21 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+
+    font-family: var(--mainfont), sans-serif;
+    @include font($fw:null);
+    // font-size: 14px;
+    // line-height: 1.14;
+    // letter-spacing: 0.03em;
+    color: var(--txtgrey);
+    background-color: var(--white-color);
+}
