@@ -1,6 +1,11 @@
 .member-card {
-    margin-left: var(--mainspacer);
-    width: calc((100% - (var(--mainspacer) * 3)) / 4);
+    @include tablet {
+        width: calc((100% - var(--mainspacer)) / 2);
+    }
+    
+    @include desktop {
+        width: calc((100% - (var(--mainspacer) * 3)) / 4);
+    }
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
         0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -11,16 +16,13 @@
     // line-height: 1.19;
     text-align: center;
     background-color: var(--white-color);
-    &:nth-child(4n+1) {
-        margin-left: 0;
-    }
 }
 
-.member-card__photo {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
+// .member-card__photo {
+//     display: block;
+//     max-width: 100%;
+//     height: auto;
+// }
 
 .member-card__name {
     @include font(500, inherit);

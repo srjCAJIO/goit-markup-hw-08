@@ -1,5 +1,14 @@
 .container {
-    width: 1200px;
+    max-width: 480px;
     padding: 0 calc(var(--mainspacer)/2);
     margin: 0 auto;
+
+    @include tablet {
+        max-width: 768px;
+    }
+
+    @include desktop {
+        max-width: 1200px;
+    }
 }
+

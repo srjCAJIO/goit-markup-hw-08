@@ -1,15 +1,19 @@
 .project {
     /* outline: 1px solid red; */
-    margin-top: var(--mainspacer);
-    margin-left: var(--mainspacer);
-    width: calc((100% - (var(--mainspacer) * 2)) / 3);
-    &:nth-child(3n+1) {
-        margin-left: 0;
+    // margin-top: var(--mainspacer);
+    width: 100%;
+    @include tablet {
+        width: calc((100% - var(--mainspacer)) / 2);
+    }
+    @include desktop {
+        width: calc((100% - (var(--mainspacer) * 2)) / 3);
     }
 }
 
 .project__link {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     color: var(--txtgrey);
     transition: box-shadow 250ms var(--anitimfnc);
     &:hover,
@@ -29,6 +33,7 @@
     /* opacity: 0; */
     position: absolute;
     bottom: 0;
+    overflow-y: auto;
 
     display: flex;
     align-items: center;
@@ -60,6 +65,7 @@
 }
 
 .project__text {
+    flex-grow: 1;
     padding: 20px 24px;
     border: 1px solid var(--bdrcolor);
     border-top: none;

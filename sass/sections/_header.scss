@@ -1,4 +1,5 @@
 .page-header {
+    // position: relative;
     @include font($fw:500, $ls:0.02em);
     // font-weight: 500;
     // letter-spacing: 0.02em;
@@ -7,13 +8,123 @@
     
     .container {
         display: flex;
+        // flex-wrap: wrap;
         align-items: center;
+    }
+    
+}
+
+.socials-set {
+    display: none;
+}
+
+.menu-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    // text-align: center;
+    &.is-open  {
+        display: flex;
+    }
+
+    @media screen and (max-width: 767px) {
+        display: none;
+
+        position: absolute;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 48px 40px;
+        width: 100%;
+        background-color: var(--white-color);
     }
 }
 
+ @media screen and (max-width: 767px) {
+    .menu-container.is-open {
+        .socials-set {
+       
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 64px;
+            @include font (500, 18px, 22px, 0.02em);
+        
+        }
+        .site-contact__link[href^="tel"] {
+            @include font(500, 34px, 40px, 0.02em);
+            color: var(--brandblue);
+        } 
+        .site-contact__link[href^="mail"] {
+            @include font(500, 24px, 28px, 0.02em);
+        }
+        .site-contact {
+            flex-direction: column-reverse;
+            gap: 32px;
+            margin-top: auto;
+        }
+    }
+}
+
+.socials-set__link {
+    color: var(--brandblue);
+
+}
+
+.socials-set__item:not(:last-child) {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 2px solid rgba(33, 33, 33, 0.2);
+}
+
+.menu-btn {
+    z-index: 100;
+    position: absolute;
+        top: 10px;
+        right: 15px;
+    border: none;
+    background-color: transparent;
+    fill: var(--txtblack);
+    
+    & .icon-cross {
+        display: none;
+    }
+    
+    &.is-open .icon-cross {
+        display: block;
+    }
+
+    &.is-open .icon-menu {
+        display: none;
+    }
+
+    &:hover {
+        fill: var(--brandblue);
+    }
+
+    @include tablet {
+        display: none;
+    }
+}
+
+// @include tablet {
+//     .menu-container {
+//         display: flex;
+//         width: 100%;
+//     }
+
+//     .menu-btn {
+//         display: none;
+//     }
+// }
 
 .page-header__nav {
     /* outline: 1px solid red; */
     display: flex;
     align-items: center;
 }
+
+
+

@@ -1,6 +1,10 @@
 .project-filter {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    @include tablet {
+        justify-content: center;
+    }
+    gap: 8px;
 }
 
 .project-filter__btn {
@@ -31,8 +35,4 @@
             0px 1px 2px rgba(0, 0, 0, 0.08),
             0px 2px 2px rgba(0, 0, 0, 0.12);
     }
-}
-
-.project-filter__item:not(:first-child) {
-    margin-left: 8px;
 }

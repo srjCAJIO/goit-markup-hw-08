@@ -3,6 +3,8 @@
 .portfolio__projects {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 20px;
+    gap: var(--mainspacer);
+    margin-top: 40px;
+    // padding-top: var(--mainspacer);
 }
 

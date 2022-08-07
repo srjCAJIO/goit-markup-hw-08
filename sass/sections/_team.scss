@@ -4,4 +4,6 @@
 
 .team__list {
     display: flex;
+    gap: var(--mainspacer);
+    flex-wrap: wrap;
 }

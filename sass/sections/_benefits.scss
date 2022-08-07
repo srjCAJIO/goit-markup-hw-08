@@ -1,18 +1,18 @@
-.benefits {
-    padding-bottom: 0;
-}
-
 .benefits__list {
     display: flex;
+    flex-wrap: wrap;
+    gap: var(--mainspacer);
     /* margin: 0; */
 }
 
 .benefits__item {
     /* outline: 1px solid red; */
-    margin-left: var(--mainspacer);
-    width: calc((100% - (var(--mainspacer) * 3)) / 4);
-    &:nth-child(4n+1) {
-        margin-left: 0;
+    // width: 100%;
+    @include tablet {
+        width: calc((100% - var(--mainspacer)) / 2);
+    }
+    @include desktop {
+        width: calc((100% - (var(--mainspacer) * 3)) / 4);
     }
 }
 
@@ -28,10 +28,12 @@
 
 .benefits__title {
     /* outline: 1px solid red; */
-    
     @include font(700, inherit);
     // font-size: inherit;
     // font-weight: 700;
+    @media screen and (max-width: 767px) {
+        text-align: center;
+    }
     text-transform: uppercase;
     color: var(--txtblack);
 }

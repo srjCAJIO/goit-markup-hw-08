@@ -1,5 +1,6 @@
 .backdrop {
     position: fixed;
+    z-index: 101;
     top: 0;
     left: 0;
     width: 100%;
@@ -8,6 +9,7 @@
 
     opacity: 1;
     transition: opacity 250ms var(--anitimfnc);
+    overflow-y: auto;
 }
 
 .backdrop--is-hidden {
@@ -16,14 +18,26 @@
 }
 
 .modal {
-    width: 528px;
-    height: 581px;
+    position: relative;
+    margin: auto;
+    // min-width: 320px;
+    width: calc(100% - var(--mainspacer));
+    max-width: 450px;
+    @include desktop {
+        max-width: 528px;
+    }
+    // max-height: 581px;
     padding: 40px;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @media screen and (min-height: 610px) {
+        position: absolute;
+        top: 50%;
+        left: 50%;  
+        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) scale(1);
+        transition:
+            transform 250ms var(--anitimfnc),
+            box-shadow 250ms var(--anitimfnc);
+    }
     background-color: var(--white-color);
 
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
@@ -31,10 +45,7 @@
         0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 
-    transform: translate(-50%, -50%) scale(1);
-    transition:
-        transform 250ms var(--anitimfnc),
-        box-shadow 250ms var(--anitimfnc);
+    
     
     .backdrop--is-hidden & {
         transform: translate(-50%, -50%) scale(0);
@@ -64,8 +75,10 @@
 
 .modal__title {
     margin-bottom: 12px;
-
-    @include font(700, 20px, 23px);
+    @include font(700, 20px, 30px);
+    @include desktop {
+        line-height: calc(23/20);
+    }
     // font-size: 20px;
     // font-weight: 700;
     // line-height: calc(23/20);
