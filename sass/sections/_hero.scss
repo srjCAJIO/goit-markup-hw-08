@@ -16,18 +16,29 @@
     margin: auto;
     background-color: var(--backgndnoimg);
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-        url("../images/mainhero-bg.jpg");
+        url("../images/hero-bg/mainhero-bg.jpg");
+    @include retina {
+            background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+                url("../images/hero-bg/mainhero-bg@2x.jpg");
+        }
     @include tablet {
-        
         max-width: 768px;
         background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-                url("../images/mainhero-bg@tablet.jpg");
+                url("../images/hero-bg/mainhero-bg-tablet.jpg");
+        @include retina {
+            background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+                    url("../images/hero-bg/mainhero-bg-tablet@2x.jpg");
+        }
     }
     @include desktop {
         height: 600px;
         max-width: 1600px;
         background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-                url("../images/mainhero-bg@desktop.jpg");
+                url("../images/hero-bg/mainhero-bg-desktop.jpg");
+        @include retina {
+            background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+                    url("../images/hero-bg/mainhero-bg-desktop@2x.jpg");
+        }
     }
     
     
